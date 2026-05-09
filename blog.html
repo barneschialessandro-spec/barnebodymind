@@ -372,18 +372,41 @@ function closeArticleBtn() {
 // Close with ESC
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeArticleBtn(); });
 
-// Load posts
-fetch('posts.json')
-  .then(r => r.json())
-  .then(posts => {
-    allPosts = posts.reverse(); // newest first
-    renderFilters(posts);
-    renderGrid(posts);
-  })
-  .catch(() => {
-    document.getElementById('grid').innerHTML =
-      '<div class="empty-state">Articoli in arrivo presto… 🌿</div>';
-  });
+// Posts inline — aggiungi nuovi articoli qui sotto
+const POSTS = [
+  {
+    "id": "1",
+    "slug": "movimento-come-medicina",
+    "title": "Il movimento come medicina: perché il corpo ha bisogno di muoversi",
+    "date": "2025-05-09",
+    "category": "Allenamento",
+    "excerpt": "Il movimento non è solo fitness. È prevenzione, benessere mentale, longevità. Scopri perché l'esercizio fisico è la medicina più potente e accessibile che esista.",
+    "content": "Il movimento non è solo fitness. È prevenzione, benessere mentale, longevità.\n\nOgni volta che muoviamo il corpo, stiamo facendo qualcosa di straordinario: attiviamo il sistema cardiovascolare, stimoliamo la produzione di endorfine, rafforziamo ossa e muscoli, miglioriamo la qualità del sonno e riduciamo i livelli di cortisolo — l'ormone dello stress.\n\nLa ricerca scientifica è ormai chiara: l'inattività fisica è uno dei principali fattori di rischio per malattie croniche, disturbi dell'umore e riduzione della qualità della vita. Eppure, milioni di persone continuano a rimandare, aspettando il momento perfetto, la motivazione giusta, le condizioni ideali.\n\nLa verità è che non esiste un momento perfetto. Esiste solo adesso.\n\n## Movimento adattato: nessuna scusa tiene\n\nUna delle obiezioni più comuni è: 'Non posso allenarmi perché ho un problema fisico.' Proprio qui entra in gioco l'allenamento adattato — la capacità di modellare l'esercizio attorno alla persona, non il contrario.\n\nChe si tratti di una disabilità, di una fase di riabilitazione, o semplicemente dell'età che avanza, esiste sempre un modo per muoversi. Sempre. Io ne sono la prova vivente.\n\n## Inizia da dove sei\n\nNon serve una palestra. Non serve attrezzatura costosa. Bastano 20 minuti al giorno, la volontà di iniziare e — se ne hai bisogno — qualcuno che ti guidi nel percorso giusto per te.\n\nIl tuo corpo ti ringrazierà. La tua mente ancora di più."
+  },
+  {
+    "id": "2",
+    "slug": "mente-e-performance",
+    "title": "La mente è il tuo muscolo più potente",
+    "date": "2025-05-09",
+    "category": "Mental Coaching",
+    "excerpt": "Nel mondo dello sport e del fitness si parla spesso di tecnica, di carichi, di nutrizione. Ma c'è un fattore che determina più di ogni altro il successo di un percorso: la mente.",
+    "content": "Nel mondo dello sport e del fitness si parla spesso di tecnica, di carichi, di nutrizione. Ma c'è un fattore che determina più di ogni altro il successo di un percorso: la mente.\n\nLa psicologia dello sport ha dimostrato ormai da decenni che la performance fisica è profondamente influenzata dallo stato mentale dell'atleta — professionista o amatore che sia. Concentrazione, motivazione, gestione dell'ansia, resilienza di fronte agli insuccessi: tutto questo si allena, esattamente come si allena un muscolo.\n\n## Il dialogo interno\n\nUno degli aspetti più potenti del mental coaching è lavorare sul dialogo interno — quella voce nella testa che spesso sabota prima ancora di iniziare. 'Non ce la faccio', 'Non sono adatto', 'È troppo difficile per me.'\n\nRiconoscere questi schemi, capire da dove vengono e trasformarli in pensieri funzionali è un lavoro che fa la differenza non solo in palestra, ma nella vita intera.\n\n## Mindfulness e movimento\n\nIntegrare la pratica della mindfulness nell'allenamento significa portare piena attenzione a ogni gesto, ogni respiro, ogni sensazione corporea. Il risultato è doppio: si migliora la tecnica esecutiva e si coltiva una connessione profonda con il proprio corpo.\n\nNon è misticismo. È neuroscienza applicata al benessere."
+  },
+  {
+    "id": "3",
+    "slug": "ginnastica-dolce-anziani",
+    "title": "Ginnastica dolce per anziani: muoversi con rispetto e intelligenza",
+    "date": "2025-05-09",
+    "category": "Allenamento Adattato",
+    "excerpt": "L'età non è una condanna all'immobilità. La ginnastica dolce per anziani è una pratica scientificamente fondata che migliora mobilità, equilibrio, forza e qualità della vita.",
+    "content": "L'età non è una condanna all'immobilità. Anzi, è proprio con l'avanzare degli anni che il movimento diventa ancora più importante — non per costruire prestazioni, ma per mantenere indipendenza, vitalità e benessere.\n\nLa ginnastica dolce per anziani è una disciplina che ho molto a cuore. Lavora su aspetti fondamentali come la mobilità articolare, l'equilibrio, la forza funzionale e la coordinazione — tutte qualità che tendono a ridursi con l'età ma che possono essere mantenute e persino migliorate con il giusto approccio.\n\n## Cosa prevede un programma di ginnastica dolce\n\nOgni programma è personalizzato in base alle condizioni fisiche della persona. In generale si lavora su:\n\n- Esercizi di mobilità per colonna vertebrale, anche e spalle\n- Esercizi di equilibrio per prevenire le cadute\n- Rinforzo muscolare con carichi leggeri o il solo peso corporeo\n- Esercizi di respirazione e rilassamento\n- Stretching dolce per mantenere la flessibilità\n\n## Il valore della costanza\n\nAnche solo 2-3 sessioni a settimana di 30 minuti producono benefici misurabili in poche settimane. La chiave è la regolarità e il rispetto dei propri limiti — che non sono muri invalicabili, ma punti di partenza da cui crescere gradualmente.\n\nLavorare con persone anziane è per me una delle esperienze più ricche e gratificanti. La loro resilienza, la loro voglia di migliorare, la loro gratitudine sono una lezione continua."
+  }
+]
+;
+
+allPosts = [...POSTS].reverse();
+renderFilters(allPosts);
+renderGrid(allPosts);
 </script>
 
 </body>
