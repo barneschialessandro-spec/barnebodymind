@@ -7,9 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BarneBodyMind – Corpo. Mente. Movimento.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     :root {
+      --font-brand:   'Baloo 2', cursive;
       --cream:        #F5E3C8;
       --cream-light:  #FBF3E6;
       --cream-dark:   #EDD5B0;
@@ -52,9 +53,9 @@ nav.scrolled { box-shadow: 0 4px 28px rgba(46,85,70,0.10); }
 }
 .nav-logo img { height: 44px; width: auto; mix-blend-mode: multiply; }
 .nav-logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600; font-size: 1.3rem;
-  color: var(--green-deep); letter-spacing: 0.02em;
+  font-family: var(--font-brand);
+  font-weight: 700; font-size: 1.25rem;
+  color: var(--green-deep); letter-spacing: 0.01em;
 }
 
 .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -469,8 +470,8 @@ footer {
 }
 .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
 .footer-logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 400; color: var(--cream-light);
+  font-family: var(--font-brand);
+  font-size: 1.2rem; font-weight: 700; color: var(--cream-light);
 }
 .footer-copy { font-size: 0.78rem; }
 .footer-links { display: flex; gap: 1.4rem; }
@@ -757,6 +758,20 @@ footer {
 </div>
 ```
 
+  </div>
+</section>
+
+<!-- BLOG TEASER -->
+
+<section id="blog" style="background: var(--cream); text-align: center; padding: 6rem 3rem;">
+  <div style="max-width: 700px; margin: 0 auto;" class="reveal">
+    <span class="section-tag">Blog</span>
+    <h2 class="section-title" style="margin-bottom: 1.2rem;">Idee, risorse<br>& ispirazioni</h2>
+    <p style="font-size: 1rem; line-height: 1.8; color: var(--ink-soft); margin-bottom: 2.2rem;">
+      Articoli su allenamento, benessere mentale, movimento adattato e consapevolezza.
+      Conoscenza condivisa, scritta con passione e vissuto reale.
+    </p>
+    <a href="blog.html" class="btn-primary">Vai al Blog →</a>
   </div>
 </section>
 
